@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <title>Table</title>
+
+<style>
+table, th, td {
+  border:0.2px solid blue;
+   border-collapse: collapse;
+
+
+}
+</style>
+<table style="width:30%" >
+<tr>
+    <th style="width:70px">Food</th>
+<th>Quantity Requested</th>
+<th>Amount Per Bag</th>
+<th>Total Sum</th>
+<th>Make Payment</th>
+</tr>
+<tr>
+    {% if food %}
+<td>{{ food }}</td>
+    {% endif %}
+    {% if qty %}
+<td>{{ qty }}</td>
+   {% endif %}
+    {% if per_bag %}
+<td>{{ per_bag }}</td>
+    {% endif %}
+    {% if cost %}
+    <td>{{ cost }}</td>
+    {% endif %}
+  <td>
+    <form>
+      <button type="submit" style="height:30px;width:100px">Pay</button>
+    </form>
+  </td>
+
+</tr>
+</table>
+<p>
+  <a href="{{url_for('food_func')}}">Go Back</a>
+</p>
+
+{% endblock %}

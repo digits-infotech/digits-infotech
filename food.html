@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <title>Food Items</title>
+<form action="{{ url_for('food_func') }}" method="POST">
+<label>Select food item: </label>
+<select id="Select food items" name="food">
+<option value=""></option>
+<option value="Yam">Yam</option>
+<option value="Beans">Beans</option>
+<option value="Rice">Rice</option>
+<option value="Semo">Semo</option>
+<option value="Gari">Gari</option>
+<option value="Yam Flour">Yam Flour</option>
+    <option value="Millet">Millet</option>
+<option value="Sesame">Sesame</option>
+<option value="Wheat">Wheat</option>
+
+</select>
+<br>
+<br>
+<label>Enter quantity: </label>
+<input type="text" name="qty" required>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" value="submit" style="height:30px;width:100px">Enter</button>
+</form>
+<br>
+
+
+{% if msg %}
+<p>{{ msg }}</p>
+{% endif %}
+
+
+
+{% if echo %}
+<p>{{ echo }}</p>
+{% endif %}
+
+
+
+{% endblock %}

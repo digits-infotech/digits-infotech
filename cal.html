@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <title>Calculation</title>
+<form action="{{ url_for('calc_func') }}" method="POST">
+  <label>Enter Employee's name: </label>
+  <input type="text" name="name">
+  <br>
+  <br>
+  <label>Enter Employee's regular: </label>
+  <input type="text" name="regular_hours">
+  <br>
+  <br>
+  <label>Enter Employee's over time: </label>
+  <input type="text" name="over_time">
+  <br>
+  <br>
+  <button type="submit" value="submit">Calculate</button>
+</form>
+{% if  gross_pay %}
+<p>{{ gross_pay }}</p>
+{% endif %}
+<p><a href="{{ url_for('index') }}">Home</a></p>
+
+{% endblock %}
